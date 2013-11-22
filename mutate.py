@@ -25,8 +25,12 @@ for x in range(1, mutationRange + 1):
     forwardMut = list(line)
     backMut = list(line)
     rand = randint(0,3)
+    while (BASEPAIRS[rand] == forwardMut[targetEnd + x]):
+      rand = randint(0,3)
     forwardMut[targetEnd + x] = BASEPAIRS[rand]
     rand = randint(0,3)
+    while (BASEPAIRS[rand] == backMut[targetEnd + x]):
+      rand = randint(0,3)
     backMut[targetStart - x] = BASEPAIRS[rand]
     out.write("".join(forwardMut))
     out.write("".join(backMut))
