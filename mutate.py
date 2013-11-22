@@ -21,6 +21,13 @@ out = open("out0", 'w')
 f = open(inputFile, 'r')
 line = list(f.readline())
 
+# Printing the base file
+base = open("base", "w")
+base.write(";\n")
+base.write("A TITLE\n")
+base.write("".join(line) + "1")
+
+
 outNumber = 0 
 
 for x in range(1, mutationRange + 1):
