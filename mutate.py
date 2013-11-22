@@ -17,9 +17,11 @@ targetEnd     = int(sys.argv[3])
 mutationRange = int(sys.argv[4])
 
 # File IO
-out = open('output', 'w')
+out = open("out0", 'w')
 f = open(inputFile, 'r')
 line = list(f.readline())
+
+outNumber = 0 
 
 for x in range(1, mutationRange + 1):
     forwardMut = list(line)
@@ -32,5 +34,15 @@ for x in range(1, mutationRange + 1):
     while (BASEPAIRS[rand] == backMut[targetEnd + x]):
       rand = randint(0,3)
     backMut[targetStart - x] = BASEPAIRS[rand]
-    out.write("".join(forwardMut))
-    out.write("".join(backMut))
+    out.write(";\n")
+    out.write("A TITLE\n")
+    out.write("".join(forwardMut) + "1")
+    out.close()
+    outNumber = outNumber + 1
+    out = open("out" + str(outNumber), "w")
+    out.write(";\n")
+    out.write("A TITLE\n")
+    out.write("".join(backMut) + "1")
+    out.close()
+    outNumber = outNumber + 1
+    out = open("out" + str(outNumber), "w")
