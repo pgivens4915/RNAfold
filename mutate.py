@@ -13,7 +13,7 @@ if (len(sys.argv) != 5):
 # Getting the command line args
 inputFile     = sys.argv[1]
 targetStart   = int(sys.argv[2])
-targetEnd     = int(sys.argv[3])
+targetEnd     = int(sys.argv[3]) - 2
 mutationRange = int(sys.argv[4])
 
 # File IO
