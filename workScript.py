@@ -8,13 +8,15 @@ fileName = sys.argv[1]
 targetStart = sys.argv[2]
 targetEnd = sys.argv[3]
 mutRange = int(sys.argv[4])
+mutCount = sys.argv[5]
+iterations = sys.argv[6]
 
 
 fileCount = mutRange * 2
 
 # Make the mutations into folding files
 os.system("./mutate.py " + fileName + " " + targetStart + " " + targetEnd + 
-          " " + str(mutRange));
+          " " + str(mutRange) + " " + mutCount + " " + iterations);
 
 os.system("./foldandconvert.py " + "base"  + " " + "base")
 
