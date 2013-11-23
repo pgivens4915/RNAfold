@@ -27,7 +27,7 @@ baseFile = open("base.dot", "r")
 stringOne = baseFile.readline()
 stringOne = baseFile.readline()
 stringOne = list(baseFile.readline())
-targetOne = stringOne[int(targetStart) : int(targetEnd)]
+targetOne = stringOne[int(targetStart) - 1 : int(targetEnd)]
 
 
 for x in range(0, int(fileCount)):
@@ -35,7 +35,7 @@ for x in range(0, int(fileCount)):
   stringTwo = compare.readline()
   stringTwo = compare.readline()
   stringTwo = list(compare.readline())
-  targetTwo = stringTwo[int(targetStart): int(targetEnd)]
+  targetTwo = stringTwo[int(targetStart) - 1: int(targetEnd)]
 
   if ("".join(targetTwo) == "".join(targetOne)):
     same = same + 1
