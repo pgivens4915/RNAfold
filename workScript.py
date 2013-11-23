@@ -29,6 +29,7 @@ stringOne = baseFile.readline()
 stringOne = list(baseFile.readline())
 targetOne = stringOne[int(targetStart) : int(targetEnd)]
 
+stringOutputFile = open('string_output', 'w')
 
 for x in range(0, int(fileCount)):
   compare = open(str(x) + ".dot", "r")
@@ -42,6 +43,13 @@ for x in range(0, int(fileCount)):
   total = x
   print "".join(targetOne)
   print "".join(targetTwo)
+  stringOutputFile.write("".join(targetOne))
+  stringOutputFile.write("\t")
+  stringOutputFile.write("".join(targetTwo))
+  stringOutputFile.write("\n")
+  
+stringOutputFile.close()
+os.system("./proximityCompare.py string_output")
 
 ratio = float(same) / float(total + 1) 
 
