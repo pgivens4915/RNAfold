@@ -21,7 +21,7 @@ os.system("./mutate.py " + fileName + " " + str(int(targetStart) + 1) + " " +
 
 os.system("./foldandconvert.py " + "base"  + " " + "base")
 
-for x in range(0, int(fileCount)  ):
+for x in range(0, int(iterations)  ):
   os.system("./foldandconvert.py " + "out" + str(x) + " " + str(x))
 
 baseFile = open("base.dot", "r")
@@ -33,7 +33,7 @@ stringOne = list(baseFile.readline())
 targetOne = stringOne[int(targetStart)  - 1: int(targetEnd)]
 
 
-for x in range(0, int(fileCount)):
+for x in range(0, int(iterations)):
   compare = open(str(x) + ".dot", "r")
   stringTwo = compare.readline()
   stringTwo = compare.readline()
